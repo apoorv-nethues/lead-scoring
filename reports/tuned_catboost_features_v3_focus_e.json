@@ -1,0 +1,31 @@
+{
+  "categorical": [
+    "PROPERTY_TYPE",
+    "BUILT_FORM",
+    "CONSTRUCTION_AGE_BAND",
+    "TENURE",
+    "lsoa21cd",
+    "msoa21cd",
+    "ladcd",
+    "property_type__tenure",
+    "property_type__built_form",
+    "property_type__age_band"
+  ],
+  "numeric": [
+    "CURRENT_ENERGY_EFFICIENCY",
+    "POTENTIAL_ENERGY_EFFICIENCY",
+    "TOTAL_FLOOR_AREA",
+    "CURRENT_ENERGY_EFFICIENCY__missing",
+    "POTENTIAL_ENERGY_EFFICIENCY__missing",
+    "TOTAL_FLOOR_AREA__missing",
+    "lad_conv_rate_12m",
+    "efficiency_diff_msoa",
+    "efficiency_rank_lad",
+    "epc_year",
+    "epc_month",
+    "epc_quarter",
+    "efficiency_gap",
+    "efficiency_ratio",
+    "total_floor_area_log1p"
+  ]
+}
