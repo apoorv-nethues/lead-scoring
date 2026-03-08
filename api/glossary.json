@@ -7,13 +7,14 @@
     {"name": "BUILT_FORM", "description": "Building shape (e.g., Detached, Semi-Detached)"},
     {"name": "CONSTRUCTION_AGE_BAND", "description": "When the property was built"},
     {"name": "TENURE", "description": "Ownership status (e.g., owner-occupied, rented)"},
-    {"name": "lsoa21cd", "description": "Lower-layer Super Output Area geographic code"},
-    {"name": "msoa21cd", "description": "Middle-layer Super Output Area geographic code"},
-    {"name": "ladcd", "description": "Local Authority District geographic code"},
+    {"name": "lsoa21cd", "displayName": "Neighbourhood", "description": "Code for the small neighbourhood area where the property is (roughly village or suburb level). Carries the strongest signal for owner profile — income, occupation, age — because it is the most local."},
+    {"name": "msoa21cd", "displayName": "District", "description": "Code for a mid-sized area that covers several neighbourhoods (roughly small town or district level). Slightly less specific than neighbourhood for owner profile but still reflects local income and employment patterns."},
+    {"name": "ladcd", "displayName": "Council area", "description": "Code for the local council area that runs local services (e.g. Manchester, Bristol). The broadest level; reflects regional differences in owner income and demographics."},
     {"name": "epc_date", "description": "Date of the energy assessment"},
     {"name": "min_lag_days", "description": "Days until sale (if sold)"},
-    {"name": "label", "description": "Whether the property sold (1) or not (0) – used for training"}
+    {"name": "label", "description": "Whether the property sold (1) or not (0) — the real conversion outcome used for reference."}
   ],
+  "areaProfileExplanation": "These area identifiers also capture information about typical owners and buyers — their income, occupation, age, and other demographics. Official statistics on deprivation, employment, and education are published at these area levels, and neighbourhoods tend to cluster by such factors. In practice, the smallest area (Neighbourhood) gives the sharpest picture of who lives there; the mid-sized area (District) is a bit less specific; the council area is the broadest. Together they act as proxies when we do not have direct household data.",
   "metrics": [
     {"name": "ROC-AUC", "description": "Ability to rank high-potential leads above low-potential ones (0.5 = random, 1 = perfect)"},
     {"name": "PR-AUC", "description": "Quality of predictions when positives are rare (good for imbalanced data)"},

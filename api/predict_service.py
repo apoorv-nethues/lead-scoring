@@ -147,10 +147,14 @@ def predict_for_rows(
 
     scored_input = apply_feature_engineering(selected)
 
-    # Build a dict row -> {score_focus_c, score_focus_e}
+    # Build a dict row -> {row, label?, score_focus_c, score_focus_e}
     out: dict[int, dict[str, Any]] = {}
     for i, row_1idx in enumerate(selected["source_row_1idx"]):
-        out[int(row_1idx)] = {"row": int(row_1idx)}
+        rec: dict[str, Any] = {"row": int(row_1idx)}
+        if "label" in selected.columns:
+            val = selected["label"].iloc[i]
+            rec["label"] = None if pd.isna(val) else int(val)
+        out[int(row_1idx)] = rec
 
     for variant in ["v3_focus_c", "v3_focus_e"]:
         model, cat_cols, _num_cols, feature_cols = _load_variant(variant, base)

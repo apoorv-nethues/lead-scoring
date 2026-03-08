@@ -23,3 +23,32 @@ web/dist/
 
 # Build / logs
 *.log
+
+# --- Demo-only: exclude non-essential files ---
+
+# Data: only holdout/manual_review_sample_v2.csv needed
+data/processed/
+data/interim/
+data/raw/
+data/external/
+data/holdout/manual_review_sample.csv
+
+# Models: only v3_focus_c and v3_focus_e needed
+models/*.joblib
+!models/tuned_catboost_v3_focus_c.joblib
+!models/tuned_catboost_v3_focus_e.joblib
+
+# Reports: only feature configs for v3_focus needed
+reports/*
+!reports/tuned_catboost_features_v3_focus_c.json
+!reports/tuned_catboost_features_v3_focus_e.json
+
+# Scripts: only predict_catboost_v3_focus.py needed for demo
+scripts/*
+!scripts/predict_catboost_v3_focus.py
+
+# Docs
+docs/
+
+# notebooks
+notebooks/

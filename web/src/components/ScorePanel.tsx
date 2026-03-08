@@ -58,6 +58,7 @@ export function ScorePanel({ selectedRows, onClearSelection }: ScorePanelProps) 
             <thead>
               <tr>
                 <th>Row</th>
+                <th title="Real conversion (1=sold, 0=not sold)">Label</th>
                 <th>Focus C</th>
                 <th>Focus E</th>
               </tr>
@@ -66,6 +67,9 @@ export function ScorePanel({ selectedRows, onClearSelection }: ScorePanelProps) 
               {predictions.map((p) => (
                 <tr key={p.row}>
                   <td>{p.row}</td>
+                  <td title="Real conversion (1=sold, 0=not sold)">
+                    {p.label != null ? p.label : '—'}
+                  </td>
                   <td>{(p.score_focus_c * 100).toFixed(2)}%</td>
                   <td>{(p.score_focus_e * 100).toFixed(2)}%</td>
                 </tr>

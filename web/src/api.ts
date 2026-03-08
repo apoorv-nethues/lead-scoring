@@ -17,6 +17,7 @@ export interface PreviewResponse {
 
 export interface Prediction {
   row: number;
+  label: number | null;
   score_focus_c: number;
   score_focus_e: number;
 }
@@ -25,10 +26,17 @@ export interface PredictResponse {
   predictions: Prediction[];
 }
 
+export interface GlossaryColumn {
+  name: string;
+  description: string;
+  displayName?: string;
+}
+
 export interface Glossary {
-  columns: { name: string; description: string }[];
+  columns: GlossaryColumn[];
   metrics: { name: string; description: string }[];
   focusExplanation: string;
+  areaProfileExplanation?: string;
 }
 
 const API_BASE = '/api';

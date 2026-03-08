@@ -39,12 +39,18 @@ export function Glossary({ open, onClose }: GlossaryProps) {
               <dl>
                 {glossary.columns.map((c) => (
                   <div key={c.name}>
-                    <dt>{c.name}</dt>
+                    <dt>{c.displayName || c.name.replace(/_/g, ' ')}</dt>
                     <dd>{c.description}</dd>
                   </div>
                 ))}
               </dl>
             </section>
+            {glossary.areaProfileExplanation && (
+              <section>
+                <h3>Area & owner profile</h3>
+                <p>{glossary.areaProfileExplanation}</p>
+              </section>
+            )}
             <section>
               <h3>Model metrics</h3>
               <dl>
