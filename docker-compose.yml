@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - INPUT_CSV=/app/data/holdout/manual_review_sample_v2.csv

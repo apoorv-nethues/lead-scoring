@@ -1,0 +1,24 @@
+venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.git
+.gitignore
+*.md
+!README.md
+.DS_Store
+*.log
+web/node_modules
+web/.gitignore
+.venv
+.env
+.env.*
+
+# Exclude large data (demo only needs holdout sample)
+data/processed
+data/interim
+data/raw
+data/external

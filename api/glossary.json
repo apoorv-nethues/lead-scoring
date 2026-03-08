@@ -1,0 +1,24 @@
+{
+  "columns": [
+    {"name": "CURRENT_ENERGY_EFFICIENCY", "description": "Current energy rating (0–100, higher = more efficient)"},
+    {"name": "POTENTIAL_ENERGY_EFFICIENCY", "description": "Possible rating after improvements"},
+    {"name": "TOTAL_FLOOR_AREA", "description": "Total floor area in square metres"},
+    {"name": "PROPERTY_TYPE", "description": "Type of property (e.g., House, Flat, Bungalow)"},
+    {"name": "BUILT_FORM", "description": "Building shape (e.g., Detached, Semi-Detached)"},
+    {"name": "CONSTRUCTION_AGE_BAND", "description": "When the property was built"},
+    {"name": "TENURE", "description": "Ownership status (e.g., owner-occupied, rented)"},
+    {"name": "lsoa21cd", "description": "Lower-layer Super Output Area geographic code"},
+    {"name": "msoa21cd", "description": "Middle-layer Super Output Area geographic code"},
+    {"name": "ladcd", "description": "Local Authority District geographic code"},
+    {"name": "epc_date", "description": "Date of the energy assessment"},
+    {"name": "min_lag_days", "description": "Days until sale (if sold)"},
+    {"name": "label", "description": "Whether the property sold (1) or not (0) – used for training"}
+  ],
+  "metrics": [
+    {"name": "ROC-AUC", "description": "Ability to rank high-potential leads above low-potential ones (0.5 = random, 1 = perfect)"},
+    {"name": "PR-AUC", "description": "Quality of predictions when positives are rare (good for imbalanced data)"},
+    {"name": "Brier", "description": "Average squared error of probabilities (lower = better calibrated)"},
+    {"name": "Log loss", "description": "Penalty for confident wrong predictions (lower = better)"}
+  ],
+  "focusExplanation": "Both models predict the likelihood that a property lead will convert (sell within a defined period). They use the same inputs (property features, efficiency, geography, etc.) but were tuned slightly differently: one emphasizes overall ranking (ROC-AUC), the other precision when positives are rare (PR-AUC). For demos, either score is suitable; the difference is small."
+}
